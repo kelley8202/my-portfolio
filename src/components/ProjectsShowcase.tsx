@@ -10,6 +10,7 @@ export default function ProjectsShowcase() {
             tech: "Angular 19, RxJS, Tailwind CSS",
             desc: "A complex standalone component admin dashboard using RxJS for global state, real-time data streams, and glassmorphism UI.",
             link: "https://github.com/kelley8202/03-admin-portal-angular",
+            demo: "https://03-admin-portal-angular.vercel.app",
             color: "from-blue-500/20 to-purple-500/20",
             accent: "text-blue-400"
         },
@@ -17,7 +18,8 @@ export default function ProjectsShowcase() {
             title: "Zalo Mini App E-commerce",
             tech: "React, ZMP SDK, ZaUI, Tailwind",
             desc: "Native-like mini application deployed on Zalo super app with seamless authentication and ZaloPay integration.",
-            link: "https://github.com/kelley8202/02-zalo-mini-app-ecommerce",
+            link: "https://github.com/kelley8202/02-zmp-ecommerce",
+            demo: "#",
             color: "from-blue-600/20 to-cyan-500/20",
             accent: "text-blue-500"
         },
@@ -26,6 +28,7 @@ export default function ProjectsShowcase() {
             tech: "React, Redux Toolkit, Framer Motion",
             desc: "Highly interactive social newsfeed with optimistic updates, theme customization, and global state management.",
             link: "https://github.com/kelley8202/05-social-feed-redux",
+            demo: "https://05-social-feed-redux.vercel.app",
             color: "from-pink-500/20 to-rose-500/20",
             accent: "text-pink-400"
         },
@@ -34,6 +37,7 @@ export default function ProjectsShowcase() {
             tech: "React, TanStack Query, DnD",
             desc: "Enterprise productivity tool featuring dual views (Kanban/List), drag-and-drop, and optimistic UI updates.",
             link: "https://github.com/kelley8202/04-task-tracker-react-query",
+            demo: "https://04-task-tracker-react-query-zxsz.vercel.app",
             color: "from-emerald-500/20 to-teal-500/20",
             accent: "text-emerald-400"
         }
@@ -73,11 +77,16 @@ export default function ProjectsShowcase() {
 
                             <div className="relative z-10">
                                 <div className="flex justify-between items-start mb-6">
-                                    <div className={`p-3 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 ${project.accent}`}>
+                                    <a
+                                        href={project.demo !== "#" ? project.demo : project.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={`p-3 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 transition-colors cursor-pointer ${project.accent}`}
+                                    >
                                         <ExternalLink className="w-6 h-6" />
-                                    </div>
+                                    </a>
                                     <div className="flex gap-3">
-                                        <a href={project.link} className="text-slate-400 hover:text-white transition-colors">
+                                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
                                             <Github className="w-5 h-5" />
                                         </a>
                                     </div>
